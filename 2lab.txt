@@ -27,6 +27,8 @@ public class Department {
 	String name, description;
 	int id;
 	College college;
+	public Department(College college) {
+		this.college = college;
 	public String getName() {
 		return name;
 	}
