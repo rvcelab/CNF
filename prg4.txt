@@ -1,0 +1,63 @@
+package com.lab.prg3;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/book")
+
+public class BookController {
+	
+	List<Book> blist = new ArrayList<Book>();
+	
+	@GetMapping
+	public List<Book> getBooks(){
+		return blist;
+	}
+	
+	@PostMapping
+	public List<Book> postBook(@RequestBody Book book) {
+		blist.add(book);
+		return blist;
+	}
+	
+	
+	
+
+}
+package com.lab.prg4;
+
+public class Product {
+	int id,price;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	String name;
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", price=" + price + ", name=" + name + "]";
+	}
+	
+
+}
